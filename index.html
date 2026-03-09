@@ -87,6 +87,90 @@
             transform: translateY(-0.125rem);
             /* 2px lift */
         }
+
+        .categories{
+            width: 100%;
+            padding: 3rem 0;
+            /* 48px 0 */
+            overflow: hidden; /* Hide scrollbars, important for marquee */
+        }
+
+        .categories h2{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 2rem;
+            /* 32px */
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 2rem; /* 32px */
+            /* 8px */
+            text-align: center;
+        }
+
+        .track-player{
+            position: relative; /* For absolute positioning of track */
+            overflow: hidden; /* Hide scrollbars */
+        }
+
+        .track-player::before, .track-player::after{
+            content: ""; /*Mainly for gradient overlays for fade effect */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+            height: 100%;
+            z-index: 2; /* Ensure they are above the track for a proper fade */
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+
+        .track-player::before{
+            left: 0;
+            background: linear-gradient(to right, #f7f4ef, transparent);
+        }
+
+        .track-player::after{
+            right: 0;
+            background: linear-gradient(to left, #f7f4ef, transparent);
+        }
+
+        .track:hover {
+            animation-play-state: paused; /* Pause the marquee on hover*/
+        } 
+        
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .card {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit; /* Inherit text color from parent, optional for now */
+            width:14rem;/* 224px */
+        }
+
+        .card-img{
+            width: 14rem;
+            height: 14rem;
+            border-radius:1.129rem; /* 18px */
+            background: gray; /* Placeholder color, replace with actual image in JS */
+            transition: transform 0.3s cubic bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; /* Smooth hover effect */ 
+        }
+
+        .card:hover .card-img {
+            transform: translateY(-0.25rem); /* 4px lift on hover, same as Shop Now button*/
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        .card p{
+            margin-top: 0.5rem; /* 8px */
+            font-size: 1rem; /* 16px */
+            text-align: center;
+            color: black;
+        }
     </style>
 </head>
 
@@ -111,15 +195,43 @@
     <!-- Hero Section -->
     <main class="hero-section">
         <div class="hero-card">
-            <h1 class="hero-heading">Welcome to Markt</h1>
+            <h1 class="hero-heading">Welcome to Haven</h1>
             <p class="hero-subtext">
                 Discover amazing products at unbeatable prices.
             </p>
             <button class="hero-shop-btn">
-                <a href="/pages/" style="text-decoration:none;color:black;">Shop Now</a> <!--Make sure to link to products page-->
+                <a href="/pages/" style="text-decoration:none;color:black;">Shop Now</a>
+                <!--Make sure to link to products page-->
             </button>
         </div>
     </main>
+
+    <section class="categories">
+        <div class="categories-text">
+            <h2>Best Deals</h2>
+            <div class="categories-header">
+                <p>Explore the top categories</p>
+            </div>
+        </div>
+
+        <div class="track-player">
+            <div class="track" id="track"></div> <!--Call track for JS-->
+        </div>
+    </section>
+
+    <script>
+        const categories = ['Electronics', 'Furniture', 'Generators', 'Watches', 'Laptops', 'Health & Beauty', 'Headphones', 'TVs'];
+        const track = document.getElementById('track'); // Track is the element ID from track class
+
+        [...categories, ...categories].forEach(name => {
+            track.innerHTML += `
+                <a class="card" href="/pages/${name.toLowerCase()}.html">
+                    <div class="card-img" style="background-image: url('/images/${name.toLowerCase()}.jpg');"></div>
+                    <p>${name}</p>
+                </a>
+            `;
+        });
+    </script>
 
 </body>
 
