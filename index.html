@@ -102,7 +102,7 @@
             /* 32px */
             font-weight: bold;
             font-style: italic;
-            margin-bottom: 2rem; /* 32px */
+            margin-bottom: 1rem; /* 32px */
             /* 8px */
             text-align: center;
         }
@@ -114,6 +114,7 @@
             font-weight:light;
             color: #545454;
             text-align: center;
+            margin-bottom: 2rem;
         }
 
         .track-player{
@@ -195,6 +196,44 @@
             font-weight:600;
         }
 
+                /* Banner Section */
+
+        .banner{
+            display:flex;
+            align-items: center;
+            gap: 3rem; /* 48px */
+            padding: 2rem 4.125rem; /* 32px 66px */
+        }
+
+        .banner-img{
+            width: 60%;
+            aspect-ratio: 4/3; /* Ensures the image is always a square, regardless of content */
+            background: gray;
+            border-radius: 1rem;
+            flex-shrink: 0;
+        }
+
+        .banner-text{
+            flex: 1;
+            text-align: right;
+        }
+
+        .banner-text h2{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.7rem; /* 32px */
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height:1.2;
+            color:#3a3a3a;
+        }
+
+        .banner-text p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem; /* 16px */
+            color: #545454;
+            line-height:1.4;
+        }
+
         /* Shop Now CTA Section */
         .shop-now-cta{
             display: flex;
@@ -202,8 +241,9 @@
             justify-content: space-between;
             background: black;
             border-radius:1rem;
-            margin: 0 4rem 4rem; /* 0 64px 64px */
+            margin: 0 4rem 2rem; /* 0 64px 32px */
             padding: 2rem; /* 32px */ 
+            margin-top: 4rem;
         }
 
         .shop-now-cta h3{
@@ -244,6 +284,8 @@
             transform: translateY(-0.125rem);
             transition: 0.3s ease;
         }
+
+        /* Products Section */
 
         .products{
             margin: 0 4rem 4rem; /* 0 64px 64px */
@@ -312,33 +354,6 @@
             text-decoration: line-through; /* Strikethrough */
         }
 
-        .banner{
-            display:flex;
-            align-items: center;
-            gap: 3rem; /* 48px */
-            padding: 2rem 4.125rem; /* 32px 66px */
-        }
-
-        .banner-img{
-            width: 60%;
-            aspect-ratio: 1/1; /* Ensures the image is always a square, regardless of content */
-            background: gray;
-            border-radius: 1rem;
-            flex-shrink: 0;
-        }
-
-        .banner-text{
-            flex: 1;
-            text-align: right;
-        }
-
-        .banner-text h2{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.7rem; /* 32px */
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            line-height:1.2;
-        }
     </style>
 </head>
 
