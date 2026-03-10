@@ -72,9 +72,12 @@
         }
 
         .product-card {
+            display: flex;
+            flex-direction: column;
             background: rgb(255, 255, 255);
             padding: 10px;
             border-radius: 10px;
+            width: 250px;
         }
 
         .product-image {
@@ -86,6 +89,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+         .product-image:hover {
+            transform: scale(1.08);
+            transition: transform 0.3s ease;
         }
 
         .product-image img {
@@ -135,6 +143,10 @@
 </head>
 
 <body>
+    <header>
+
+    </header>
+
     <!--Main-->
     <main>
         <!--Hero Section-->
@@ -155,6 +167,7 @@
                     <li><a href="#">Jewelry</a></li>
                     <li><a href="#">Laptops</a></li>
                     <li><a href="#">Watches</a></li>
+                    <li><a href="#">Others</a></li>
                 </ul>
             </aside>
 
@@ -176,8 +189,8 @@
                         <p>Description of Product 1</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$20.99</span>
+                            <span class="old">$25.99</span>
                         </div>
                     </div>
                 </div>
@@ -193,12 +206,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Cardigan</h3>
+                        <p>Cardigan made from wool.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$9.99</span>
+                            <span class="old">$14.99</span>
                         </div>
                     </div>
                 </div>
@@ -214,12 +227,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Tissot Watch</h3>
+                        <p>Swiss-made watch with a stainless steel case and bracelet.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$39.99</span>
+                            <span class="old">$49.99</span>
                         </div>
                     </div>
                 </div>
@@ -235,12 +248,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Yarn</h3>
+                        <p>High-quality yarn for knitting and crocheting.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$10.99</span>
+                            <span class="old">$20.99</span>
                         </div>
                     </div>
                 </div>
@@ -256,12 +269,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Puma Shoes</h3>
+                        <p>Comfortable and stylish shoes for everyday wear.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$119.99</span>
+                            <span class="old">$229.99</span>
                         </div>
                     </div>
                 </div>
@@ -277,12 +290,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Converse Shoes</h3>
+                        <p>Classic and comfortable shoes for everyday wear.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$90.99</span>
+                            <span class="old">$110.99</span>
                         </div>
                     </div>
                 </div>
@@ -298,8 +311,8 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Hoodie</h3>
+                        <p>Comfortable and stylish hoodie for everyday wear.</p>
 
                         <div class="price">
                             <span class="new">$19.99</span>
@@ -319,12 +332,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Dell Laptop</h3>
+                        <p>High-performance laptop for work and play.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$339.99</span>
+                            <span class="old">$449.99</span>
                         </div>
                     </div>
                 </div>
@@ -340,12 +353,12 @@
 
                     <div class="product-info">
                         <br>
-                        <h3>Product 1</h3>
-                        <p>Description of Product 1</p>
+                        <h3>Merle Norman Lipstick</h3>
+                        <p>Highly pigmented lipstick with long-lasting color.</p>
 
                         <div class="price">
-                            <span class="new">$19.99</span>
-                            <span class="old">$29.99</span>
+                            <span class="new">$29.99</span>
+                            <span class="old">$39.99</span>
                         </div>
                     </div>
                 </div>
@@ -355,6 +368,10 @@
         </div>
 
     </main>
+
+    <footer>
+
+    </footer>
 
 </body>
 
