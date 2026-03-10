@@ -1,29 +1,23 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-/* Header */
+/* Header only for now*/
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #111;
-  color: #fff;
+  background: #ffffff;
+  color: #484848;
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: #d3d3d3 0.063rem solid;
 }
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+}
+.search-bar{
+  padding: 1rem 1rem;
+  border-radius: 100px;
 }
 .nav-links {
   display: flex;
@@ -33,15 +27,6 @@ body {
   margin: 0 1rem;
 }
 .nav-links a {
-  color: #fff;
+  color: #484848;
   text-decoration: none;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: #fff;
-  margin-top: 2rem;
 }
