@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charizaed 004/102 Base Set (Shadowless) Holo | Haven</title>
+    <title>Charizard 004/102 Base Set (Shadowless) Holo | Haven</title>
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -12,14 +12,15 @@
             background: #fff;
         }
 
+        /*Product Image and Description section*/
         .product-description-section {
-            max-width: 1280px;
-            margin: 14px auto;
-            padding: 0 20px;
+            max-width: 98.462rem;
+            margin: 1.077rem auto;
+            padding: 0 1.538rem;
             display: grid;
-            grid-template-columns: 55% 45%;
-            gap: 28px;
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 5%;
+            align-items: stretch;
         }
 
         .product-image { 
@@ -44,42 +45,42 @@
         }
         
         .product-image:hover img { 
-            transform: 
-            scale(1.06); 
+            transform: scale(1.06); 
         }
 
         .product-details { 
-            min-width: 0; 
+            min-width: 0;
+            align-self: stretch;
         }
 
         .product-title {
-            font-size: 20px;
+            font-size: 1.538rem;
             font-weight: 600;
             line-height: 1.4;
             color: #191919;
-            margin-bottom: 14px;
+            margin-bottom: 1.077rem;
         }
 
         .product-info {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
+            gap: 0.769rem;
+            padding: 0.769rem 0.923rem;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
-            margin-bottom: 18px;
+            margin-bottom: 1.385rem;
         }
         
         .seller-logo {
-            width: 36px;
-            height: 36px;
+            width: 2.769rem;
+            height: 2.769rem;
             background: #191919;
             color: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 0.923rem;
             font-weight: 700;
             flex-shrink: 0;
         }
@@ -89,28 +90,28 @@
         }
         
         .seller-name-link { 
-            font-size: 13px;
-             color: #0064d2; 
+            font-size: 1rem;
+            color: #0064d2; 
         }
         
         .seller-count { 
             font-weight: 400;
-             color: #767676;
-            font-size: 12px; 
+            color: #767676;
+            font-size: 0.923rem; 
         }
         
         .seller-meta { 
-            font-size: 12px;
+            font-size: 0.923rem;
             color: #767676;
-            margin-top: 2px;
-             display: flex; 
-             gap: 4px; 
-             flex-wrap: wrap; 
+            margin-top: 0.154rem;
+            display: flex; 
+            gap: 0.308rem; 
+            flex-wrap: wrap; 
         }
         
         .seller-meta .positive { 
             color: #191919;
-             font-weight: 500; 
+            font-weight: 500; 
         }
         
         .seller-meta .sep { 
@@ -118,33 +119,33 @@
         }
         
         .seller-arrow {
-             font-size: 20px;
-              color: #aaa;
-               flex-shrink: 0;
+            font-size: 1.538rem;
+            color: #aaa;
+            flex-shrink: 0;
         }
 
         .product-price {
-            margin-bottom: 16px; 
+            margin-bottom: 1.231rem; 
         }
+
         .product-price-main {
-            font-size: 28px;
+            font-size: 2.154rem;
             font-weight: 700;
             color: #191919; 
-            margin-bottom: 4px; 
+            margin-bottom: 0.308rem; 
         }
         
         .product-price-list { 
-            font-size: 13px; 
+            font-size: 1rem; 
             color: #767676; 
         }
         
         .price-strike { 
-            text-decoration: 
-            line-through; 
+            text-decoration: line-through; 
         }
         
         .price-info-icon { 
-            font-size: 12px; 
+            font-size: 0.923rem; 
             color: #aaa; 
             cursor: pointer; 
         }
@@ -152,9 +153,9 @@
         .product-qty {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            font-size: 13px;
+            gap: 0.769rem;
+            margin-bottom: 1.077rem;
+            font-size: 1rem;
         }
         
         .product-qty-label { 
@@ -162,39 +163,39 @@
         }
         
         .product-qty-input {
-            width: 50px;
-            height: 32px;
+            width: 3.846rem;
+            height: 2.462rem;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
             text-align: center;
-            font-size: 14px;
-            padding: 0 6px;
+            font-size: 1.077rem;
+            padding: 0 0.462rem;
         }
         
         .product-sold-count { 
-            font-size: 13px; 
+            font-size: 1rem; 
             color: #767676; 
         }
 
         .product-feature {
-            font-size: 13px;
+            font-size: 1rem;
             color: #555;
             line-height: 1.6;
-            margin-bottom: 18px;
+            margin-bottom: 1.385rem;
         }
 
         .btn-buy-now {
             display: block;
             width: 100%;
-            padding: 13px;
+            padding: 1rem;
             border-radius: 25px;
             background: #3665f3;
             color: #fff;
-            font-size: 16px;
+            font-size: 1.231rem;
             font-weight: 700;
             border: none;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 0.769rem;
             transition: filter .15s;
         }
 
@@ -205,15 +206,15 @@
         .btn-add-cart {
             display: block;
             width: 100%;
-            padding: 13px;
+            padding: 1rem;
             border-radius: 25px;
             background: #fff;
             color: #191919;
-            font-size: 16px;
+            font-size: 1.231rem;
             font-weight: 700;
             border: 1px solid #8c8c8c;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 1.538rem;
             transition: border-color .15s;
         }
 
@@ -224,49 +225,126 @@
         .sell-strip {
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            padding: 16px 20px;
+            padding: 1.231rem 1.538rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 10px;
+            gap: 0.769rem;
         }
+
         .sell-text { 
-            font-size: 20px; 
+            font-size: 1.538rem; 
             font-weight: 400; 
             color: #191919; 
         }
+
         .sell-link { 
             color: #e53238; 
             font-style: italic; 
         }
+
         .sell-btns { 
             display: flex; 
-            gap: 8px; 
+            gap: 0.615rem; 
         }
+
         .sell-btn-outline {
-            padding: 8px 16px;
+            padding: 0.615rem 1.231rem;
             border: 1px solid #8c8c8c;
             border-radius: 20px;
             background: #fff;
-            font-size: 13px;
+            font-size: 1rem;
             cursor: pointer;
             white-space: nowrap;
         }
+
         .sell-btn-outline:hover { 
             border-color: #191919; 
         }
+
         .sell-btn-solid {
-            padding: 8px 16px;
+            padding: 0.615rem 1.231rem;
             border: none;
             border-radius: 20px;
             background: #191919;
             color: #fff;
-            font-size: 13px;
+            font-size: 1rem;
             cursor: pointer;
             white-space: nowrap;
         }
+
         .sell-btn-solid:hover { 
             background: #333; 
+        }
+
+        /* Items You Might Like section */
+        .similar-items-strip {
+            margin: 0 4rem 4rem;
+            padding: 2rem;
+        }
+
+        .similar-items-strip h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 3.5rem;
+        }
+
+        .similar-items-products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .similar-item-product {
+            text-decoration: none;
+        }
+
+        .similar-item-product-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .similar-item-product-img img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .similar-item-product:hover .similar-item-product-img img {
+            transform: scale(1.06);
+        }
+
+        .similar-item-product-name {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+            color: black;
+        }
+
+        .similar-item-product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .similar-item-price {
+            font-size: 1.4375rem;
+            font-weight: bold;
+            color: #000000;
         }
 
 
@@ -321,6 +399,43 @@
                         <button class="sell-btn-solid">Sell one like this</button>
                     </div>
                 </div>
+            </div>    
+        </div>
+    </div>
+
+        <!-- Items You Might Like section -->
+        <div class="similar-items-strip">
+            <h2>Items You Might Like</h2>
+            <div class="similar-items-products">
+                <div class="similar-item-product">
+                    <div class="similar-item-product-img"><img src="../images/Other/Minoxidil.webp" alt="Product 1"></div>
+                    <p class="similar-item-product-name">Kirkland Minoxidil 5 Topical Solution Extra Strength Hair Regrowth Treatment 1</p>
+                    <div class="similar-item-product-price">
+                        <span class="similar-item-price">$22.50</span>
+                    </div>
+                </div>
+                <div class="similar-item-product">
+                    <div class="similar-item-product-img"><img src="../images/Other/Cups.webp" alt="Product 2"></div>
+                    <p class="similar-item-product-name">Mini Small Thermos Coffee Mug Capacity Vacuum Cup Leakproof Flask Leak-proof UK</p>
+                    <div class="similar-item-product-price">
+                        <span class="similar-item-price">$3.99</span>
+                    </div>
+                </div>
+                <div class="similar-item-product">
+                    <div class="similar-item-product-img"><img src="../images/Other/Table.webp" alt="Product 3"></div>
+                    <p class="similar-item-product-name">Vintage Folding Floral Metal Lap Tray TV Retro Mid Century Bed</p>
+                    <div class="similar-item-product-price">
+                        <span class="similar-item-price">$20.00</span>
+                    </div>
+                </div>
+                <div class="similar-item-product">
+                    <div class="similar-item-product-img"><img src="../images/Other/Drill.webp" alt="Product 4"></div>
+                    <p class="similar-item-product-name">Milwaukee M18 Fuel 1/2" 18V Cordless Hammer Drill - 2904-20</p>
+                    <div class="similar-item-product-price">
+                        <span class="similar-item-price">$123.99</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
