@@ -18,7 +18,7 @@
 
         .payment-container {
             display: flex;
-            min-height: 100vh;
+            min-height: 94vh;
         }
 
         .left {
@@ -102,8 +102,10 @@
             border-color: #0077cc;
         }
 
-        .field-row .field:first-child { /* Expiry date field */
-            flex: 2; /* Expiry date gets more space than CVV */
+        .field-row .field:first-child {
+            /* Expiry date field */
+            flex: 2;
+            /* Expiry date gets more space than CVV */
         }
 
         .field-row .field:last-child {
@@ -194,6 +196,14 @@
             background: url('../images/Payment/game.webp') center/cover no-repeat;
             border-radius: 8px;
         }
+
+        footer {
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+            border-top: #ddd 1px solid;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 </head>
 
@@ -239,7 +249,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn">Pay!</button>
+                        <button type="submit" class="btn" onclick="paymentAlert()">Pay!</button>
 
                     </form>
                 </div>
@@ -249,13 +259,27 @@
                 <span class="or-text">OR</span>
                 <p class="game-text">Play this game and get a chance to win a discount voucher</p>
                 <div class="game-img"></div>
-                <button class="btn-play">Play now</button>
+                <button class="btn-play"><a href="https://rujalrazz.github.io/mini-game-portal/index.html" style="text-decoration: none; color:white; font-size:1rem;">Play now</a></button>
             </div>
 
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer>
+        <p>
+            Copyright &copy; 2026 Haven. All Rights Reserved.
+            <a href="#" class="copyright">Accessibility</a>,
+            <a href="#" class="copyright">User Agreement</a>,
+            <a href="#" class="copyright">Privacy</a>,
+            <a href="#" class="copyright">Consumer Health Data</a>,
+            <a href="#" class="copyright">Payments Terms of Use</a>,
+            <a href="#" class="copyright">Cookies</a>,
+            <a href="#" class="copyright">CA Privacy Notice</a>.
+        </p>
+    </footer>
 
+    <script src="../javascript/script.js"></script>
 
 </body>
 
