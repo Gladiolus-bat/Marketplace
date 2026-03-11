@@ -211,6 +211,7 @@
             background: gray;
             border-radius: 1rem;
             flex-shrink: 0;
+            background-image: url("../images/Home/outfits.webp");
         }
 
         .banner-text{
@@ -569,7 +570,9 @@
         [...categories, ...categories].forEach(name => {
             track.innerHTML += `
                 <a class="card" href="/pages/${name.toLowerCase()}.html">
-                    <div class="card-img" style="background-image: url('/images/${name.toLowerCase()}.jpg');"></div> 
+                    <div class="card-img" style="background-image: url('/images/Home/${name.toLowerCase()}.webp'); background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;"></div> 
                     <p class="card-title" style="font-size: 1.1rem;">${name}</p>
                 </a>
             `;
