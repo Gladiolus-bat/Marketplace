@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        main {
+            background-color: #ffffff;
+            padding: 0 4.125rem;
+            /* 66px */
+        }
+
+        .hero-section {
+            padding-top: 1rem;
+            /* 40px */
+        }
+
+        .hero-card {
+            /* Image Background Logic */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #d52941;
+            /*background-image: linear-gradient(rgba(72, 143, 182, 0.4), rgba(0, 0, 0, 0.4)), url('/images/');*/
+            border-radius: 0.9375rem;
+            /* 15px */
+            padding: 5rem;
+            /* 80px 60px */
+            padding-top: 1rem;
+            padding-left: 8rem;
+            min-height: 20rem;
+            /* 400px */
+            display: flex;
+            flex-direction: column;
+            /*Keep them in a single column */
+            justify-content: center;
+            /* Center them in middle region of screen */
+        }
+
+        .hero-heading {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Add market sans font */
+            font-size: 3rem;
+            /* 72px */
+            font-weight: bold;
+            margin-bottom: 0.9375rem;
+            /* 15px */
+            color: #ffffff;
+        }
+
+        .hero-subtext {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 28.125rem;
+            /* 450px */
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5625rem;
+            /* 25px */
+            margin-top: -0.5rem;
+            font-size: 1.1rem;
+            /* 14px */
+        }
+
+        .hero-shop-btn {
+            background-color: #ffffff;
+            /* Changed to white button for better aesthetic on images */
+            color: #333;
+            border: none;
+            padding: 0.75rem 1.5625rem;
+            /* 12px 25px */
+            border-radius: 1.5625rem;
+            /* 25px */
+            width: fit-content;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .hero-shop-btn:hover {
+            background-color: #d0d0d0;
+            /*Add color scheme of website*/
+            transform: translateY(-0.125rem);
+            /* 2px lift */
+        }
+
+        /*Marquee Category Section, Refer to .track to change visibility*/
+
+        .categories{
+            width: 100%;
+            padding: 3rem 0;
+            /* 48px 0 */
+        }
+
+        .categories h2{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 2rem;
+            /* 32px */
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 1rem; /* 32px */
+            /* 8px */
+            text-align: center;
+        }
+
+        .categories-subtext p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            /* 16px */
+            font-weight:light;
+            color: #545454;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .track-player{
+            position: relative; /* For absolute positioning of track, Gradients don't work otherwise. */
+            overflow: hidden; /* Hide scrollbars, Important for this marquee */
+        }
+
+        .track-player::before, .track-player::after{
+            content: ""; /*Mainly for gradient overlays for fade effect */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+            height: 100%;
+            z-index: 2; /* Ensure they are above the track for a proper fade */
+        }
+
+        .track-player::before{
+            left: 0;
+            background: linear-gradient(to right, #ecfaff, transparent); /* Adds the light blue gradient on the left side */
+        }
+
+        .track-player::after{
+            right: 0;
+            background: linear-gradient(to left, #ecfaff, transparent); /* Adds the light blue gradient on the right side */
+        }
+        .track {
+            display: flex;
+            gap:1.129rem; /* 18px */
+            width: max-content; /* Allow track to expand based on content */
+            padding: 1rem 0;
+            animation: scroll 28s linear infinite; /* Less seconds = More Faster */
+        }
+        .track:hover {
+            animation-play-state: paused; /* Pause the marquee on hover*/
+        } 
+        
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%); /* Makes the marquee from right to left, by 50% of max width*/
+            }
+        }
+
+        .card {
+            cursor: pointer;
+            text-decoration: none;
+            width:14rem;/* 224px */
+        }
+
+        .card-img{
+            width: 14rem;
+            height: 14rem;
+            border-radius:0.5rem; /* 8px */
+            background: rgb(187, 187, 187); /* Only a box for images, add images through JS, not here. */
+            transition: transform 0.3s, box-shadow 0.3s; /* Not really necessary, but useful scaling */
+        }
+
+        .card .card-img{
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform-origin:bottom;
+        }
+
+        .card:hover .card-img {
+            transform:scaleX(1.5); /* Three options, either scaleX, scaleY or scale, Needs to be tested with images during polishing */
+        }
+
+        .card p{
+            margin-top: 0.5rem; /* 8px */
+            font-size: 1rem; /* 16px */
+            text-align: center;
+            color: black;
+        }
+
+        .card-title{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight:600;
+        }
+
+                /* Banner Section */
+
+        .banner{
+            display:flex;
+            align-items: center;
+            gap: 3rem; /* 48px */
+            padding: 2rem 4.125rem; /* 32px 66px */
+        }
+
+        .banner-img{
+            width: 60%;
+            aspect-ratio: 4/3; /* Ensures the image is always a square, regardless of content */
+            background: gray;
+            border-radius: 1rem;
+            flex-shrink: 0;
+        }
+
+        .banner-text{
+            flex: 1;
+            text-align: right;
+        }
+
+        .banner-text h2{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.7rem; /* 32px */
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height:1.2;
+            color:#3a3a3a;
+        }
+
+        .banner-text p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem; /* 16px */
+            color: #545454;
+            line-height:1.4;
+        }
+
+        /* Shop Now CTA Section */
+        .shop-now-cta{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: black;
+            border-radius:1rem;
+            margin: 0 4rem 2rem; /* 0 64px 32px */
+            padding: 2rem; /* 32px */ 
+            margin-top: 4rem;
+        }
+
+        .shop-now-cta h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.03rem; /* 0.5px */
+        }
+
+        .shop-now-cta p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem; /* 16px */
+            margin-top:0.5rem; /* 8px */
+            color: #d0d0d0;
+        }
+
+        .shop-now-cta-but{
+            background-color: #ffffff;
+            color: #333;
+            border: none;
+            padding: 0.75rem 1.5625rem;
+            /* 12px 25px */
+            border-radius: 1.5625rem;
+            /* 25px */
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .shop-now-cta-but a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .shop-now-cta-but:hover {
+            background-color: #d0d0d0;
+            transform: translateY(-0.125rem);
+            transition: 0.3s ease;
+        }
+
+        /* Products Section */
+
+        .products{
+            margin: 0 4rem 4rem; /* 0 64px 64px */
+            padding: 2rem; /* 32px */
+        }
+
+        .products h2{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Either Add DM SANS or Market SANS */
+            font-size: 1.7rem; /* 32px */
+            font-weight: 700;
+            margin-bottom: 3.5rem; /* 56px */
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem; /* 24px */
+        }
+
+        .grid-card{
+            text-decoration: none;
+        }
+
+        .grid-card-img{
+            width:100%;
+            aspect-ratio: 1/1; /* Ensures the image is always a square, regardless of content */
+            background: rgb(163, 161, 161);
+            border-radius: 0.5rem; /* 8px */
+            margin-bottom: 0.8rem; /* 12px */
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .grid-card:hover .grid-card-img{
+            transform: translateY(-0.125rem);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-card-title{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem; /* 18px */
+            font-weight: bold;
+            line-height:1.4;
+            margin-bottom: 0.5rem; /* 8px */
+            overflow: hidden; /* Ensures that long titles don't break the layout */
+            color: black;
+        }
+
+        .grid-card-price{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* 8px */
+        }
+
+        .discount-price{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5625rem; /* 25px */
+            font-weight: bold;
+            color: #000000; /* Red color for discount price */
+        }
+
+        .actual-price{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem; /* 16px */
+            color: #545454; 
+            text-decoration: line-through; /* Strikethrough */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="hero-card">
+            <h1 class="hero-heading">Welcome to Haven</h1>
+            <p class="hero-subtext">
+                Discover amazing products at unbeatable prices.
+            </p>
+            <button class="hero-shop-btn">
+                <a href="/pages/" style="text-decoration:none;color:black;">Shop Now</a>
+                <!--Make sure to link to products page-->
+            </button>
+        </div>
+    </main>
+
+    <!--Category Section-->
+    <section class="categories">
+        <div class="categories-text">
+            <h2>Best Deals</h2>
+            <div class="categories-subtext">
+                <p>Explore the top categories</p>
+            </div>
+        </div>
+
+        <div class="track-player">
+            <div class="track" id="track"></div> <!--Call track for JS-->
+        </div>
+    </section>
+
+    <!--Banner--> 
+    <!--Needs review with design so please work on this after products-->
+    <section class="banner">
+        <div class="banner-img"></div>
+        <div class="banner-text">
+            <h2>Legit 'fits that are legit fresh</h2>
+            <p>Discover the latest trends in fashion and elevate your style with our curated collection of clothing and accessories.</p>
+        </div>
+    </section>
+
+    <!--Shop Now CTA-->
+    <section class="shop-now-cta">
+        <div>
+            <h3>Don't Miss Out!</h3>
+            <p>Shop now and experience the best deals on our marketplace.</p>
+        </div>
+        <button class="shop-now-cta-but">
+            <a href="/pages/products.html">Shop Now</a>
+        </button>
+    </section>
+
+    <!--Products Section-->
+    <section class="products">
+        <h2>Today's Picks</h2>
+        <!--8 products for now-->
+        <div class="grid">
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+
+            <a class="grid-card" a href="/pages/">
+                <div class="grid-card-img"></div>
+                <p class="grid-card-title">Product Name</p>
+                <div class="grid-card-price">
+                    <span class="discount-price">$200.00</span>
+                    <span class="actual-price">$2000.00</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Marquee Functionality -->
+    <script>
+        const categories = ['Electronics', 'Furniture', 'Generators', 'Watches', 'Laptops', 'Health & Beauty', 'Headphones', 'TVs'];
+        const track = document.getElementById('track'); // Track is the element ID from track class
+
+        // Now this is a really interesting concept, '...categories' is a spread operator. 
+        // We're basically unpacking all the elements of categories twice and storing it in forEach loop. 
+        // The loop continues from right to left, repeating almost x2 the categories and acting like it's a marquee.
+        //Reference: https://www.youtube.com/watch?v=RuDdltsfaVc
+        [...categories, ...categories].forEach(name => {
+            track.innerHTML += `
+                <a class="card" href="/pages/${name.toLowerCase()}.html">
+                    <div class="card-img" style="background-image: url('/images/${name.toLowerCase()}.jpg');"></div> 
+                    <p class="card-title" style="font-size: 1.1rem;">${name}</p>
+                </a>
+            `;
+        });
+    </script>
+
+</body>
+
+</html>
