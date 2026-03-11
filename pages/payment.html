@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Haven</title>
     <style>
-        .payment-container {
-            display: flex;
-            min-height: 80vh;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .right {
-            border-left: #ddd 1px solid;
+        .body {
+            background: rgb(120, 120, 120);
+        }
+
+        .payment-container {
+            display: flex;
+            min-height: 100vh;
         }
 
         .left {
@@ -20,7 +26,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 3rem;
+            background: rgb(79, 69, 217);
+        }
+
+        /* Payment Card */
+        .payment-card {
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 420px;
         }
 
         .payment-form {
@@ -28,14 +44,14 @@
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 0;
         }
 
         .payment-form h2 {
-            margin-bottom: 1rem;
+            margin-bottom: 4rem;
             text-align: center;
             font-size: 1.5rem;
             font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Payment icons */
@@ -86,6 +102,35 @@
             border-color: #0077cc;
         }
 
+        .field-row .field:first-child { /* Expiry date field */
+            flex: 2; /* Expiry date gets more space than CVV */
+        }
+
+        .field-row .field:last-child {
+            flex: 1;
+        }
+
+        .payment-form input {
+            width: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 16px;
+            background: rgb(255, 255, 255);
+            color: rgb(53, 53, 53);
+            border: 1px solid #737373;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #3a4246;
+            color: white;
+        }
+
         /* Expiry and CVV fields in a row */
 
         .field-row {
@@ -94,23 +139,16 @@
             margin-bottom: 1rem;
         }
 
-        .field-row .field:first-child {
-            flex: 2;
-        }
-
-        .field-row .field:last-child {
-            flex: 1;
-        }
-
         .btn-play {
-            width: 95%;
+            width: 240px;
             padding: 0.7rem;
             margin-top: 16px;
-            background: #4b5256;
-            color: #fff;
+            background: rgb(54, 54, 205);
+            color: white;
             border: none;
             border-radius: 24px;
             cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
         }
 
         .btn-play:hover {
@@ -131,30 +169,30 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            margin-top: -3rem;
             gap: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .or-text {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #333;
+            color: #cd3232;
         }
 
         .game-text {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: #555;
             text-align: center;
             line-height: 1.6;
-            max-width: 220px;
+            width: 340px;
         }
 
         .game-img {
-            width: 200px;
-            height: 120px;
+            width: 340px;
+            height: 260px;
             background: url('../images/Payment/game.webp') center/cover no-repeat;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -165,45 +203,47 @@
         <div class="payment-container">
 
             <div class="left">
-                <form class="payment-form" id="PaymentForm">
+                <div class="payment-card">
+                    <form class="payment-form" id="PaymentForm">
 
-                    <h2 style="text-align: center;">Payment Method</h2>
+                        <h2>Payment Method</h2>
 
-                    <div class="payment-icons">
-                        <img class="payment-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                            alt="Mastercard">
-                        <img class="payment-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
-                            alt="Bitcoin">
-                        <img class="payment-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                            alt="PayPal">
-                    </div>
-
-                    <div class="field">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" placeholder="5600 - 0000 - 1111 - 222" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="card-holder-name">Card Holder Name</label>
-                        <input type="text" id="card-holder-name" placeholder="Kenneth Cole" required>
-                    </div>
-
-                    <div class="field-row">
-                        <div class="field">
-                            <label for="expiry-date">Expiry Date</label>
-                            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                        <div class="payment-icons">
+                            <img class="payment-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                                alt="Mastercard">
+                            <img class="payment-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin">
+                            <img class="payment-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
                         </div>
 
                         <div class="field">
-                            <label for="cvv" style="width: 360px;">CVV :</label>
-                            <input type="text" id="cvv" placeholder="179" required>
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="5600 - 0000 - 1111 - 222" required>
                         </div>
-                    </div>
 
-                    <button type="submit" class="btn">Pay!</button>
+                        <div class="field">
+                            <label for="card-holder-name">Card Holder Name</label>
+                            <input type="text" id="card-holder-name" placeholder="Kenneth Cole" required>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="expiry-date">Expiry Date</label>
+                                <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                            </div>
+                            <div class="field">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="179" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn">Pay!</button>
+
+                    </form>
+                </div>
             </div>
-            </form>
 
             <div class="right">
                 <span class="or-text">OR</span>
@@ -214,6 +254,8 @@
 
         </div>
     </main>
+
+
 
 </body>
 
