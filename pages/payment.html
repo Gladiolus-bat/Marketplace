@@ -13,7 +13,7 @@
         }
 
         .right {
-            
+
             border-left: #ddd 1px solid;
         }
 
@@ -38,7 +38,7 @@
             margin-top: 16px;
         }
 
-        .payment-form input[type="text"]{
+        .payment-form input[type="text"] {
             width: 90%;
             padding: 8px;
             margin-top: 0.3rem;
@@ -76,29 +76,56 @@
             <div class="left">
                 <form class="payment-form" id="PaymentForm">
 
-                    <div class="form-container">
-                        <h2 style="text-align: center;">Payment Method</h2>
+                    <h2 style="text-align: center;">Payment Method</h2>
 
+                    <div class="payment-icons">
+                        <img class="payment-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                        <img class="payment-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                            alt="Mastercard">
+                        <img class="payment-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
+                            alt="Bitcoin">
+                        <img class="payment-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                            alt="PayPal">
+                    </div>
+
+                    <div class="field">
                         <label for="card-number">Card Number</label>
                         <input type="text" id="card-number" placeholder="5600 - 0000 - 1111 - 222" required>
+                    </div>
 
+                    <div class="field">
                         <label for="card-holder-name">Card Holder Name</label>
                         <input type="text" id="card-holder-name" placeholder="Kenneth Cole" required>
-
-                        <label for="expiry-date">Expiry Date</label>
-                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
-
-                        <label for="cvv" style="width: 360px;">CVV :</label>
-                        <input type="text" id="cvv" placeholder="179" required>
-
-                        <button type="submit" class="btn">Pay!</button>
                     </div>
-                </form>
-            </div>
 
-            <div class="right">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                        </div>
 
+                        <div class="field">
+                            <label for="cvv" style="width: 360px;">CVV :</label>
+                            <input type="text" id="cvv" placeholder="179" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Pay!</button>
             </div>
+            </form>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <div class="right">
+            <span class="or-text">OR</span>
+            <p class="game-text">Play this game and get a chance to win a discount voucher</p>
+            <div class="game-img"></div>
+            <button class="btn-play">Play now</button>
+        </div>
 
         </div>
     </main>
