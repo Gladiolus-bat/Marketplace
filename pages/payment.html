@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Haven</title>
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         * {
             box-sizing: border-box;
@@ -47,7 +48,7 @@
         }
 
         .payment-form h2 {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             text-align: center;
             font-size: 1.5rem;
             font-weight: 700;
@@ -210,10 +211,12 @@
 <body>
 
     <main>
+
         <div class="payment-container">
 
             <div class="left">
                 <div class="payment-card">
+                    <span style="cursor: pointer; text-decoration: underline; color: rgb(44, 44, 215);" onclick="window.history.back()">Go back</span>
                     <form class="payment-form" id="PaymentForm">
 
                         <h2>Payment Method</h2>
@@ -259,7 +262,8 @@
                 <span class="or-text">OR</span>
                 <p class="game-text">Play this game and get a chance to win a discount voucher</p>
                 <div class="game-img"></div>
-                <button class="btn-play"><a href="https://rujalrazz.github.io/mini-game-portal/index.html" style="text-decoration: none; color:white; font-size:1rem;">Play now</a></button>
+                <button class="btn-play"><a href="https://rujalrazz.github.io/mini-game-portal/index.html"
+                        style="text-decoration: none; color:white; font-size:1rem;">Play now</a></button>
             </div>
 
         </div>
