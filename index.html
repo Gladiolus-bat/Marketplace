@@ -568,8 +568,8 @@
         //Reference: https://www.youtube.com/watch?v=RuDdltsfaVc
         [...categories, ...categories].forEach(name => {
             track.innerHTML += `
-                <a class="card" href="/pages/${name.toLowerCase()}.html">
-                    <div class="card-img" style="background-image: url('images/${name.toLowerCase()}.jpg');"></div> 
+                <a class="card" href="pages/${name.toLowerCase()}.html">
+                    <div class="card-img" style="background-image: url('/images/${name.toLowerCase()}.jpg');"></div> 
                     <p class="card-title" style="font-size: 1.1rem;">${name}</p>
                 </a>
             `;
