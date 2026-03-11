@@ -5,3 +5,7 @@ function showNotification() {
 function showCart() {
     alert("Your cart is currently empty.");
 }
+
+function sellAlert() {
+    alert("To sell an item, please log in or register an account.");
+}
