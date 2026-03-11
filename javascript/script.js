@@ -13,3 +13,8 @@ function sellAlert() {
 function addCart() {
     alert("Item added to cart!");
 } 
+
+// Login and Register Page Alerts
+function passwordAlert() {
+    alert("Please contact support to reset your password.");
+}
