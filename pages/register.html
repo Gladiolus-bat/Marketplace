@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haven - Register</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .header-center a {
+      margin: 0 24px;
+      text-decoration: none;
+      color: #666;
+    }
+
+    .register-container {
+      display: flex;
+      min-height: 80vh;
+      gap: 20px;
+    }
+
+    .left {
+      width: 800px;
+      background-image: url(../images/Logo/RegisterBG.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: #ddd 1px solid;
+    }
+
+    .register-form {
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .register-form h2 {
+      margin-bottom: 1rem;
+    }
+
+    .register-form label {
+      display: block;
+      margin-top: 16px;
+    }
+
+    .register-form input[type="text"],
+    .register-form input[type="tel"],
+    .register-form input[type="password"] {
+      width: 90%;
+      padding: 8px;
+      margin-top: 0.3rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .checkbox {
+      margin-top: 16px;
+    }
+
+    .btn {
+      width: 95%;
+      padding: 0.7rem;
+      margin-top: 16px;
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .forgot {
+      display: block;
+      margin-top: 8px;
+      color: red;
+      text-decoration: none;
+    }
+
+    .note {
+      font-size: 10px;
+      color: #666;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      background: #ccc;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 16px;
+      text-align: center;
+      font-size: 14px;
+      border-top: #ddd 1px solid;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <section>
+      <div class="header-main">
+        <div class="logo">
+          <a href="../index.html"><img src="../images/logo.png" alt="Logo of Haven"></a>
+        </div>
+
+        <div class="header-center">
+          <a href="../index.html">HOME</a>
+          <a href="/pages/productPage.html">SHOP</a>
+        </div>
+
+        <div class="header-icons">
+          <a href="#"><img src="../images/Header/notification.png" alt="Notification"></a>
+          <a href="#"><img src="../images/Header/cart.png" alt="Cart"></a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+
+    <div class="register-container">
+
+      <div class="left">
+      </div>
+
+      <div class="right">
+
+        <form class="register-form">
+
+          <div class="form-container">
+            <h2 style="width: 360px;">Register</h2>
+
+            <label for="name" style="width: 360px;">Name :</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="phone" style="width: 360px;">Phone Number :</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="password" style="width: 360px;">Password :</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <div class="checkbox" style="width: 360px;">
+              <label for="terms"> <input type="checkbox" name="checkbox" id="terms">
+                <span style="font-size: 12px;">I have read and agree to the <a href="#">Terms of
+                    Service</a></span></label>
+            </div>
+
+            <button type="submit" class="btn" style="width: 360px;">Register</button>
+
+            <a href="#" class="forgot">Forgot Password?</a>
+
+            <p class="note">This site is protected by reCAPTCHA and the <br>Google Privacy Policy and Terms of
+              Service apply.</p>
+          </div>
+
+
+          <button class="login-btn">Already have an account? <a href="../pages/login.html">Login</a></button>
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Copyright &copy; 2026 Haven. All Rights Reserved.
+      <a href="#" class="copyright">Accessibility</a>,
+      <a href="#" class="copyright">User Agreement</a>,
+      <a href="#" class="copyright">Privacy</a>,
+      <a href="#" class="copyright">Consumer Health Data</a>,
+      <a href="#" class="copyright">Payments Terms of Use</a>,
+      <a href="#" class="copyright">Cookies</a>,
+      <a href="#" class="copyright">CA Privacy Notice</a>.
+    </p>
+  </footer>
+
+</body>
+
+</html>

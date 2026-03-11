@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        /* HERO */
+
+        .hero {
+            margin: 30px auto;
+            width: 90%;
+            background-image: url('/images/other/DIOR-Product-Hero.png');
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 114px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        /* MAIN LAYOUT */
+
+        .container {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            gap: 40px;
+            background-image: url(../images/Logo/Background.svg);
+            background-repeat: no-repeat;
+            background-position: left 800px;
+            background-size: 400px;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 200px;
+            height: 300px;
+            padding: 10px 40px 10px 0px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar li a {
+            color: #6c6c6c;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #000000;
+        }
+
+        /*Products and Load more container*/
+        .products-load-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* PRODUCTS */
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 54px;
+            flex: 1;
+            border-top: #aaaaaa69 solid 1px;
+            padding-top: 40px;
+            padding-left: 40px;
+        }
+
+        .product-item {
+            display: flex;
+            flex-direction: column;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .product-image {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 290px;
+            border-radius: 10px;
+        }
+
+        .product-image:hover {
+            transform: scale(1.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image span {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #000000;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .product-image span img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .product-name {
+            margin: 14px 0 2px 0;
+        }
+
+        .product-price {
+            margin: 10px 0 8px 0;
+        }
+
+        .product-price strong {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .product-old-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #9A9A9A;
+        }
+
+        .load-more {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .load-more-btn {
+            background-color: transparent;
+            color: #494949;
+            border: 1px solid #B0B0B0;
+            padding: 10px 36px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .load-more-btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .load-more-btn a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <section>
+            <div class="header-top">
+                <a href="#" class="Sell">Sell</a>
+                <a href="/pages/login.html">Login</a>
+                or
+                <a href="/pages/register.html">Register</a>
+            </div>
+            <div class="header-main">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/logo.png" alt="Logo of Haven"></a>
+                </div>
+
+                <div class="search-bar">
+                    <a href="#" class="search"><img src="../images/Header/search.png" alt="Search"></a>
+                    <input type="text" placeholder="Search ">
+                    <a href="#" class="up-arrow"><img src="../images/Header/up.png" alt="Search"></a>
+                </div>
+
+                <div class="header-icons">
+                    <a href="#"><img src="../images/Header/notification.png" alt="Notification"></a>
+                    <a href="#"><img src="../images/Header/cart.png" alt="Cart"></a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!--Main-->
+    <main>
+        <!--Hero Section-->
+        <div class="hero">
+            <h1>Electronics</h1><br>
+            <h2>Browse the best electronics.</h2>
+
+        </div>
+
+        <!--Main Section-->
+        <div class="container">
+
+            <!--Side Bar-->
+            <aside class="sidebar">
+                <h3>CATEGORIES</h3>
+
+                <ul>
+                    <li><a href="/pages/electronics.html">Electronics</a></li>
+                    <li><a href="/pages/jewelry.html">Jewelry</a></li>
+                    <li><a href="/pages/watches.html">Watches</a></li>
+                    <li><a href="/pages/clothes.html">Clothes</a></li>
+                    <li><a href="/pages/others.html">Others</a></li>
+                </ul>
+            </aside>
+            <div class="products-load-container">
+                <!--Products-->
+                <section class="products-container">
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <a href="../pages/productDetails.html"><img src="../images/Profile Page/product1.jpg"
+                                    alt="Pendant"></a>
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">3pcs Round Pendant Necklace, Suitable For Everyday Wear</h3>
+
+                            <p class="product-price">
+                                <strong>$9.99</strong>
+                                <span class="product-old-price">$12.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Clothes/Cardigan.webp" alt="Cardigan">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Cardigan</h3>
+
+                            <p class="product-price">
+                                <strong>$9.99</strong>
+                                <span class="product-old-price">$14.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Watches/Tissot.webp" alt="Tissot Watch">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Tissot Watch</h3>
+
+                            <p class="product-price">
+                                <strong>$39.99</strong>
+                                <span class="product-old-price">$49.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Other/Yarn.webp" alt="Yarn">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Yarn</h3>
+
+                            <p class="product-price">
+                                <strong>$10.99</strong>
+                                <span class="product-old-price">$20.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Shoes/Ouma.webp" alt="Puma Shoes">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Puma Shoes</h3>
+
+                            <p class="product-price">
+                                <strong>$119.99</strong>
+                                <span class="product-old-price">$229.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Shoes/Converse.webp" alt="Converse Shoes">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Converse Shoes</h3>
+
+                            <p class="product-price">
+                                <strong>$90.99</strong>
+                                <span class="product-old-price">$110.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Clothes/hoodie.webp" alt="Hoodie">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Hoodie</h3>
+
+                            <p class="product-price">
+                                <strong>$19.99</strong>
+                                <span class="product-old-price">$29.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Electronics/Laptop.webp" alt="Dell Laptop">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Dell Laptop</h3>
+
+                            <p class="product-price">
+                                <strong>$339.99</strong>
+                                <span class="product-old-price">$449.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+
+                        <div class="product-image">
+                            <img src="../images/Other/Lipstick.webp" alt="Merle Norman Lipstick">
+                            <span>
+                                <img src="../images/Logo/cart-shopping-solid.png" alt="shopping cart icon">
+                            </span>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h3 class="product-name">Merle Norman Lipstick</h3>
+
+                            <p class="product-price">
+                                <strong>$29.99</strong>
+                                <span class="product-old-price">$39.99</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="load-more">
+                    <button class="load-more-btn"><a href="#top">Load more...</a></button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section>
+            <div class="footer">
+                <img src="../images/logo.png" alt="Haven Logo">
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Quick Links</h2>
+                        </li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="/pages/productPage.html">Products</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Products</h2>
+                        </li>
+                        <li><a href="../pages/electronics.html">Electronics</a></li>
+                        <li><a href="../pages/jewelry.html">Jewelry</a></li>
+                        <li><a href="../pages/watches.html">Watches</a></li>
+                        <li><a href="../pages/clothes.html">Clothes</a></li>
+                        <li><a href="../pages/others.html">Others</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p>
+                Copyright &copy; 2026 Haven. All Rights Reserved.
+                <a href="#" class="copyright">Accessibility</a>,
+                <a href="#" class="copyright">User Agreement</a>,
+                <a href="#" class="copyright">Privacy</a>,
+                <a href="#" class="copyright">Consumer Health Data</a>,
+                <a href="#" class="copyright">Payments Terms of Use</a>,
+                <a href="#" class="copyright">Cookies</a>,
+                <a href="#" class="copyright">CA Privacy Notice</a>.
+            </p>
+        </section>
+
+    </footer>
+
+</body>
+
+</html>

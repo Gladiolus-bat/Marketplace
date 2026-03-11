@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .profile-heading {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .profile-banner {
+            width: 95%;
+            height: 240px;
+            border-radius: 0 0 24px 24px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .profile-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .shop-info {
+            display: flex;
+            padding: 0 5% 20px 430px;
+        }
+
+        .profile-photo {
+            position: absolute;
+            left: 10%;
+            top: 140px;
+        }
+
+        .profile-photo img {
+            width: 246px;
+            height: 246px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+        }
+
+        .shop-detail {
+            flex: 3;
+        }
+
+        .shop-detail h2 {
+            font-size: 32px;
+            margin: 15px 0 10px 0;
+        }
+
+        .shop-detail p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .shop-actions {
+            flex: 2;
+            text-align: right;
+            padding-top: 30px;
+        }
+
+        .shop-actions a {
+            margin-left: 25px;
+            font-size: 16px;
+            vertical-align: middle;
+            text-decoration: none;
+            color: black;
+        }
+
+        .shop-actions img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        .shop-stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .shop-stats img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .stat-item div h2 {
+            margin: 0;
+            font-size: 60px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .stat-item div p {
+            margin: 0;
+            font-size: 22px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .shop-products {
+            padding: 40px 5%;
+        }
+
+        .shop-products h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            gap: 3%;
+            margin-bottom: 50px;
+        }
+
+        .product-item {
+            width: 23%;
+        }
+
+        .product-image {
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 290px;
+            border-radius: 20px;
+        }
+
+        .product-image:hover {
+            transform: scale(1.08);
+        }
+
+        .product-image span {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .product-image span img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .product-name {
+            margin: 14px 0 2px 0;
+        }
+
+        .product-price {
+            margin: 10px 0 8px 0;
+        }
+
+        .product-price strong {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .product-old-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #9A9A9A;
+        }
+
+        .load-more {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .load-more-btn {
+            background-color: transparent;
+            color: #494949;
+            border: 1px solid #B0B0B0;
+            padding: 10px 36px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .load-more-btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section>
+            <div class="header-top">
+                <a href="#" class="Sell">Sell</a>
+                <a href="../pages/login.html">Login</a>
+                or
+                <a href="../pages/register.html">Register</a>
+            </div>
+            <div class="header-main">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/logo.png" alt="Logo of Haven"></a>
+                </div>
+
+                <div class="search-bar">
+                    <a href="#" class="search"><img src="../images/Header/search.png" alt="Search"></a>
+                    <input type="text" placeholder="Search ">
+                    <a href="#" class="up-arrow"><img src="../images/Header/up.png" alt="Search"></a>
+                </div>
+
+                <div class="header-icons">
+                    <a href="#"><img src="../images/Header/notification.png" alt="Notification"></a>
+                    <a href="#"><img src="../images/Header/cart.png" alt="Cart"></a>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="profile-heading">
+        <div class="profile-banner">
+            <img src="../images/Profile Page/profile-banner-1.jpg" alt="profile-banner">
+        </div>
+        <div class="shop-info">
+            <div class="profile-photo">
+                <img src="../images/Profile Page/profile-1.jpg" alt="profile">
+            </div>
+            <div class="shop-detail">
+                <h2>Opal MoonShine</h2>
+                <p>A jewellery boutique offering elegant and timeless pieces inspired by the natural glow of opals and
+                    moonlight. Discover beautifully crafted rings, necklaces, bracelets, and earrings designed to add a
+                    touch of sparkle and sophistication to every moment. ✨🌙💎</p>
+            </div>
+            <div class="shop-actions">
+                <a href="#"><img src="../images/Profile Page/share.png" alt="share icon"> Share</a>
+                <a href="#"><img src="../images/Profile Page/contact.png" alt="contact icon"> Contact</a>
+                <a href="#"><img src="../images/Profile Page/save.png" alt="Save seller icon"> Save Seller</a>
+            </div>
+        </div>
+        <div class="shop-stats">
+            <img src="../images/Profile Page/trophy.png" alt="trophy icon" style="width: 80px; height: 80px; ">
+            <div class="stat-item">
+                <div class="followers">
+                    <h2>8.4 K</h2>
+                    <p>Followers</p>
+                </div>
+                <div class="dot">
+                    <h2>.</h2>
+                </div>
+                <div class="positive-feedback">
+                    <h2>98%</h2>
+                    <p>Positive Feedback</p>
+                </div>
+                <div class="dot">
+                    <h2>.</h2>
+                </div>
+                <div class="items-sold">
+                    <h2>150</h2>
+                    <p>Items Sold</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="shop-products">
+        <h2>Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/product1.jpg" alt="Product 1">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">3pcs Round Pendant Necklace, Suitable For Everyday Wear </h3>
+                <p class="product-price">
+                    <strong>$9.99</strong>
+                    <span class="product-old-price">$12.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product2.jpg" alt="Product 2">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Rhinestone 5 Piece Cuff Bracelet Set | Color: Gold | Size: Os </h3>
+                <p class="product-price">
+                    <strong>$16.99</strong>
+                    <span class="product-old-price">$24.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/product3.jpg" alt="Product 3">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Gold Celestial Bracelet | Moon, Star Charms & Cat's Eye Beads </h3>
+                <p class="product-price">
+                    <strong>$79.49</strong>
+                    <span class="product-old-price">$99.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product4.jpg" alt="Product 4">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Moon and Saturn Necklace (Solid Silver) | Abbott Atelier | Artisan Jewelry
+                    $34.99 </h3>
+                <p class="product-price">
+                    <strong>$34.99</strong>
+                    <span class="product-old-price">$46.99</span>
+                </p>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product5.jpg" alt="Product 5">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Flower Rings For Women Non Tarnish Gemstone Cubic Zirconia Mother of Pearl
+                    Adjustable Size Rose Gold-No Birthstone 7 </h3>
+                <p class="product-price">
+                    <strong>$38.79</strong>
+                    <span class="product-old-price">$42.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product6.jpg" alt="Product 6">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Hazel Blues | 925 Sterling Silver Planet Bracelet </h3>
+                <p class="product-price">
+                    <strong>$72.79</strong>
+                    <span class="product-old-price">$97.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product7.jpg" alt="Product 7">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Dainty Freshwater Pearl Necklace with Diamond,Gold Leaf Diamond Pearl
+                    Necklace </h3>
+                <p class="product-price">
+                    <strong>$33.99</strong>
+                    <span class="product-old-price">$46.99</span>
+                </p>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="../images/Profile Page/Product8.jpg" alt="Product 8">
+                    <span>
+                        <img src="../images/Profile Page/shopping-cart.png" alt="shopping cart icon">
+                    </span>
+                </div>
+                <h3 class="product-name">Fashion Long Tassel Earrings Threader Ear Line Charm Women Jewelry Gift New |
+                    Color: Gold/Silver | Size: Os </h3>
+                <p class="product-price">
+                    <strong>$13.99</strong>
+                    <span class="product-old-price">$24.99</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="load-more">
+            <button class="load-more-btn">Load more...</button>
+        </div>
+    </section>
+    <footer>
+        <section>
+            <div class="footer">
+                <img src="../images/logo.png" alt="Haven Logo">
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Quick Links</h2>
+                        </li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/products.html">Products</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Products</h2>
+                        </li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Watches</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothes</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p>
+                Copyright &copy; 2026 Haven. All Rights Reserved.
+                <a href="#" class="copyright">Accessibility</a>,
+                <a href="#" class="copyright">User Agreement</a>,
+                <a href="#" class="copyright">Privacy</a>,
+                <a href="#" class="copyright">Consumer Health Data</a>,
+                <a href="#" class="copyright">Payments Terms of Use</a>,
+                <a href="#" class="copyright">Cookies</a>,
+                <a href="#" class="copyright">CA Privacy Notice</a>.
+            </p>
+        </section>
+    </footer>
+</body>
+
+</html>
