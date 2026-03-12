@@ -619,14 +619,14 @@
     <!-- Marquee Functionality -->
     <script>
         const categories = [
-            { name: 'Electronics', file: 'electronics' },
-            { name: 'Jewelry', file: 'jewelry' },
-            { name: 'Clothes', file: 'clothes' },
-            { name: 'Watches', file: 'watches' },
-            { name: 'Laptops', file: 'laptops' },
-            { name: 'Health & Beauty', file: 'health-beauty' },
-            { name: 'Headphones', file: 'headphones' },
-            { name: 'TVs', file: 'tvs' },
+            { name: 'Electronics', file: 'electronics', ext: 'webp' },
+            { name: 'Jewelry', file: 'jewelry', ext: 'webp' },
+            { name: 'Clothes', file: 'clothes', ext: 'webp' },
+            { name: 'Watches', file: 'watches', ext: 'webp' },
+            { name: 'Laptops', file: 'laptops', ext: 'webp' },
+            { name: 'Health & Beauty', file: 'health-beauty', ext: 'webp' },
+            { name: 'Headphones', file: 'headphones', ext: 'webp' },
+            { name: 'TVs', file: 'tvs', ext: 'webp' },
         ];
 
         const track = document.getElementById('track');
@@ -634,7 +634,7 @@
         [...categories, ...categories].forEach(cat => {
             track.innerHTML += `
             <a class="card" href="pages/${cat.file}.html">
-                <div class="card-img" style="background-image: url('images/Home/${cat.file}.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                <div class="card-img" style="background-image: url('images/Home/${cat.file}.${cat.ext}'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                 <p class="card-title" style="font-size: 1.1rem;">${cat.name}</p>
             </a>
         `;
