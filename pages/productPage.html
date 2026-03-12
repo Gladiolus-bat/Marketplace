@@ -41,7 +41,7 @@
         /* SIDEBAR */
 
         .sidebar {
-            width: 200px;
+            width: 240px;
             height: 300px;
             padding: 10px 40px 10px 0px;
         }
@@ -63,6 +63,43 @@
             color: #2e2e3a;
         }
 
+        /*News section*/
+        .news-container {
+            margin-top: 60px;
+        }
+
+        .news-item {
+            padding: 10px 0px 10px 0px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-title{
+            color: #6c6c6c;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .news-title:hover {
+            color: #2e2e3a;
+            cursor: pointer;
+        }
+
+        .news-meta, .date {
+            color: #6c6c6c;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-meta a {
+            text-decoration: none;
+            color: #3e9bff;
+        }
+
+        .news-meta a:hover {
+            text-decoration: underline;
+        }
+
         /*Products and Load more container*/
         .products-load-container {
             display: flex;
@@ -74,7 +111,7 @@
         .products-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 54px;
+            gap: 45px;
             flex: 1;
             border-top: #aaaaaa69 solid 1px;
             padding-top: 40px;
@@ -223,8 +260,26 @@
                     </ul>
                 </div>
 
-                <div class="categories-bottom">
-                    NEWS and 
+                <div class="news-container">
+                    <h3>NEWS</h3>
+                    <div class="news-item">
+                        <div class="news-title">Breaking: New Feature Released</div>
+
+                        <span class="date">Date: March 12, 2026</span>
+                        <div class="news-meta">
+                            <a href="#">Read</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-title">Upcoming Event: Tech Conference</div>
+
+                        <span class="date">Date: March 20, 2026</span>
+                        <div class="news-meta">
+                            <a href="#">Read</a>
+                        </div>
+                    </div>
+
                 </div>
             </aside>
 
