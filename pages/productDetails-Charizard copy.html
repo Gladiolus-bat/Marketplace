@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Description - Haven</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+         body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 13px;
+            color: #2e2e3a;
+            background: #fff;
+        }
+
+        /* Product Page */
+        .product-page {
+            display: flex;
+            gap: 3rem;
+            padding: 2rem 4.125rem;
+            align-items: flex-start;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Left Images */
+        .product-images {
+            flex: 1;
+        }
+
+        .product-main-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #f0f0f0;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .thumbnail {
+            flex: 1;
+            aspect-ratio: 1 / 1;
+            background: #e8e8e8;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Right Details */
+        .product-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .back-btn span {
+            font-size: 1rem;
+        }
+
+        .product-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2e2e3a;
+            line-height: 1.4;
+            margin-top: -0.1rem;
+        }
+
+        /* Seller */
+        .seller-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.75rem 0;
+            transition: background 0.2s;
+            margin-top: -1.12rem;
+        }
+
+        .seller-link:hover {
+            background: #f9f9f9;
+        }
+
+        .seller-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: #ccc;
+            flex-shrink: 0;
+        }
+
+        .seller-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            flex: 1;
+        }
+
+        .seller-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2e2e3a;
+        }
+
+        .seller-meta {
+            font-size: 0.8rem;
+            color: #0064d2;
+        }
+
+        .seller-arrow {
+            font-size: 1.4rem;
+            color: #aaa;
+        }
+
+        /* Pricing */
+        .product-pricing {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2e2e3a;
+        }
+
+        .product-old-price {
+            font-size: 0.95rem;
+            color: #aaa;
+            text-decoration: line-through;
+        }
+
+        .product-discount {
+            font-size: 0.85rem;
+            color: #e74c3c;
+        }
+
+        /* Quantity */
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-quantity label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .product-quantity input {
+            width: 4rem;
+            padding: 0.4rem 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 0.4rem;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .sold-count {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Features */
+        .product-features {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn-buy {
+            width: 100%;
+            padding: 0.9rem;
+            background: #3665f3;
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: -1rem;
+        }
+
+        .btn-buy:hover {
+            background: #2851d0;
+        }
+
+        .btn-cart {
+            width: 100%;
+            padding: 0.9rem;
+            background: white;
+            color: #2e2e3a;
+            border: 1.5px solid #ccc;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            margin-top: -1rem;
+        }
+
+        .btn-cart:hover {
+            border-color: #888;
+        }
+
+        /* Sell Banner */
+        .sell-banner {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            min-height: 8rem;
+        }
+
+        .sell-banner-img {
+            width: 100%;
+            height: 100%;
+            min-height: 8rem;
+            background: #e0ddd8;
+            /* swap with <img> later */
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+        }
+
+        .sell-banner-text {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.75rem;
+            padding: 1.25rem;
+        }
+
+        .sell-banner-text p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2e2e3a;
+        }
+
+        .sell-banner-text p span {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+        .sell-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-sell-outline {
+            padding: 0.5rem 1rem;
+            border: 1.5px solid #ccc;
+            border-radius: 2rem;
+            background: white;
+            font-size: 0.85rem;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .btn-sell-outline:hover {
+            border-color: #888;
+        }
+
+        .btn-sell-dark {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            background: #2e2e3a;
+            color: white;
+            font-size: 0.85rem;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-sell-dark:hover {
+            background: #333;
+        }
+
+        /* Products Section */
+
+        .products {
+            margin: 0 4rem 4rem;
+            /* 0 64px 64px */
+            padding: 2rem;
+            /* 32px */
+        }
+
+        .products h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Either Add DM SANS or Market SANS */
+            font-size: 1.7rem;
+            /* 32px */
+            font-weight: 700;
+            margin-bottom: 3.5rem;
+            /* 56px */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            /* 24px */
+        }
+
+        .grid-card {
+            text-decoration: none;
+        }
+
+        .grid-card-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            /* Ensures the image is always a square, regardless of content */
+            background: rgb(163, 161, 161);
+            border-radius: 0.5rem;
+            /* 8px */
+            margin-bottom: 0.8rem;
+            /* 12px */
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .grid-card:hover .grid-card-img {
+            transform: translateY(-0.125rem);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-card-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            /* 18px */
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            /* 8px */
+            overflow: hidden;
+            /* Ensures that long titles don't break the layout */
+            color: #2e2e3a;
+        }
+
+        .grid-card-price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            /* 8px */
+        }
+
+        .discount-price {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5625rem;
+            /* 25px */
+            font-weight: bold;
+            color: #2e2e3a;
+            /* Red color for discount price */
+        }
+
+        .actual-price {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            /* 16px */
+            color: #545454;
+            text-decoration: line-through;
+            /* Strikethrough */
+        }
+
+        /* Features Section */
+
+        .features {
+            background: #2e2e3a;
+            margin: 0 2rem;
+            border-radius: 0.5rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 4rem 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .feature-img {
+            width: 45%;
+            aspect-ratio: 4 / 3;
+            background: #d9d9d9;
+            border-radius: 0.75rem;
+            flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-text p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <section>
+            <div class="header-top">
+                <a href="#" class="Sell">Sell</a>
+                <a href="login.html">Login</a>
+                or
+                <a href="register.html">Register</a>
+            </div>
+            <div class="header-main">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/logo.png" alt="Logo of Haven"></a>
+                </div>
+
+                <div class="search-bar">
+                    <a href="#" class="search"><img src="../images/Header/search.png" alt="Search"></a>
+                    <input type="text" placeholder="Search ">
+                    <a href="#" class="up-arrow"><img src="../images/Header/up.png" alt="Search"></a>
+                </div>
+
+                <div class="header-icons">
+                    <a href="#" onclick="showNotification()"><img src="../images/Header/notification.png"
+                            alt="Notification"></a>
+                    <a href="#" onclick="showCart()"><img src="../images/Header/cart.png" alt="Cart"></a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <!-- Product Page -->
+        <section class="product-page">
+
+            <!-- Left: Images -->
+            <div class="product-images">
+                <div class="product-main-img">
+                    <img src="../images/Shoes/Nike.webp" alt="product-image">
+                </div>
+            </div>
+
+            <!-- Right: Details -->
+            <div class="product-details">
+
+                <button class="back-btn" onclick="history.back()">
+                    Back
+                </button>
+
+                <h1 class="product-title">
+                    Nike Streakfly 2 Road Racing Shoes
+                </h1>
+
+                <a href="profile.html" class="seller-link">
+                    <div class="seller-avatar"></div>
+                    <div class="seller-info">
+                        <span class="seller-name">Velocity (22,000)</span>
+                        <span class="seller-meta">96% positive · Seller's other items · Contact seller</span>
+                    </div>
+                    <span class="seller-arrow">›</span>
+                </a>
+
+                <div class="product-pricing">
+                    <span class="product-price">US $190.00</span>
+                </div>
+
+                <div class="product-quantity">
+                    <label for="qty">Quantity:</label>
+                    <input type="number" id="qty" value="1" min="1">
+                    <span class="sold-count">550 sold</span>
+                </div>
+
+                <p class="product-features">Nike, Running Shoes, Men, Fitness, Shoes</p>
+
+                <button class="btn-buy"><a href="payment.html" style="text-decoration: none; color:white">Buy It
+                        Now</a></button>
+                <button class="btn-cart" onclick="addCart()">Add to cart</button>
+
+                <div class="sell-banner">
+                    <div class="sell-banner-img"></div> <!-- swap with <img src="..."> later -->
+                    <div class="sell-banner-text">
+                        <p>Have one to <span>sell?</span></p>
+                        <div class="sell-actions">
+                            <button class="btn-sell-outline" onclick="sellAlert()">Sell something else</button>
+                            <button class="btn-sell-dark" onclick="sellAlert()">Sell one like this</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--Products Section-->
+        <section class="products">
+            <h2>Today's Picks</h2>
+            <!--8 products for now-->
+            <div class="grid">
+                <a class="grid-card" a href="/pages/">
+                    <div class="grid-card-img">
+                        <img src="../images/Shoes/ankle boots.webp" alt="product-image">
+                    </div>
+                    <p class="grid-card-title">Product Name</p>
+                    <div class="grid-card-price">
+                        <span class="discount-price">$200.00</span>
+                        <span class="actual-price">$2000.00</span>
+                    </div>
+                </a>
+
+                <a class="grid-card" a href="/pages/">
+                    <div class="grid-card-img">
+                        <img src="../images/Shoes/sport shoe.webp" alt="product-image">
+                    </div>
+                    <p class="grid-card-title">Product Name</p>
+                    <div class="grid-card-price">
+                        <span class="discount-price">$200.00</span>
+                        <span class="actual-price">$2000.00</span>
+                    </div>
+                </a>
+
+                <a class="grid-card" a href="/pages/">
+                    <div class="grid-card-img">
+                        <img src="../images/Shoes/skate shoe.webp" alt="product-image">
+                    </div>
+                    <p class="grid-card-title">Product Name</p>
+                    <div class="grid-card-price">
+                        <span class="discount-price">$200.00</span>
+                        <span class="actual-price">$2000.00</span>
+                    </div>
+                </a>
+
+                <a class="grid-card" a href="/pages/">
+                    <div class="grid-card-img">
+                        <img src="../images/Shoes/white boots.webp" alt="product-image">
+                    </div>
+                    <p class="grid-card-title">Product Name</p>
+                    <div class="grid-card-price">
+                        <span class="discount-price">$200.00</span>
+                        <span class="actual-price">$2000.00</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section>
+            <div class="footer">
+                <img src="../images/logo.png" alt="Haven Logo">
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Quick Links</h2>
+                        </li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="productPage.html">Products</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li>
+                            <h2>Products</h2>
+                        </li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="jewelry.html">Jewelry</a></li>
+                        <li><a href="watches.html">Watches</a></li>
+                        <li><a href="clothes.html">Clothes</a></li>
+                        <li><a href="others.html">Others</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p>
+                Copyright &copy; 2026 Haven. All Rights Reserved.
+                <a href="#" class="copyright">Accessibility</a>,
+                <a href="#" class="copyright">User Agreement</a>,
+                <a href="#" class="copyright">Privacy</a>,
+                <a href="#" class="copyright">Consumer Health Data</a>,
+                <a href="#" class="copyright">Payments Terms of Use</a>,
+                <a href="#" class="copyright">Cookies</a>,
+                <a href="#" class="copyright">CA Privacy Notice</a>.
+            </p>
+        </section>
+
+    </footer>
+
+    <script src="../javascript/script.js"></script>
+</body>
+
+</html>
