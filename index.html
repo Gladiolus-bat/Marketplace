@@ -196,7 +196,7 @@
             background: rgb(187, 187, 187);
             /* Only a box for images, add images through JS, not here. */
             transition: transform 0.3s, box-shadow 0.3s;
-            /* Not really necessary, but useful scaling */
+            overflow: hidden;
         }
 
         .card .card-img {
@@ -205,7 +205,7 @@
         }
 
         .card:hover .card-img {
-            transform: scaleX(1.5);
+            transform: scale(1.08);
             /* Three options, either scaleX, scaleY or scale, Needs to be tested with images during polishing */
         }
 
