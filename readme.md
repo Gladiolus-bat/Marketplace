@@ -17,17 +17,22 @@ Haven is a frontend-only marketplace where users can browse products by category
 haven/
 ├── index.html                  # Homepage
 ├── css/
-│   └── style.css               # Global styles (header, footer, layout)
+│   ├── style.css               # Global styles (header, footer, layout)
+|   └── description.css         # Global styles (details pages)
 ├── javascript/
 │   └── script.js               # Shared scripts (cart, notifications, marquee)
 ├── images/                     # All image assets organized by category
 │   ├── Header/
+│   ├── Home/
 │   ├── Clothes/
 │   ├── Electronics/
 │   ├── Watches/
 │   ├── Shoes/
+│   ├── Jewellery/
 │   ├── Other/
 │   ├── Payment/
+│   ├── Profile Page/
+│   ├── Seller-icons/
 │   └── Logo/
 └── pages/
     ├── productPage.html         # All products with sidebar filter
